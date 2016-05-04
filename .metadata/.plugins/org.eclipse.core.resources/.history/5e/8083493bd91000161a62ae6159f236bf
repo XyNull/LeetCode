@@ -1,0 +1,27 @@
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO 自动生成的方法存根
+    	int var = addDigits(29);
+	}
+
+    public static int addDigits(int num) {
+    	int num2 = 0;
+    	int temp = 0;
+    	
+        if(num< 10){
+        	return num;
+        }
+        
+        else{
+			for(num2 = num % 10 ; num >= 10 ; ){
+				num = num / 10 ;
+				temp = num % 10;
+				num2 += temp;
+			}
+			
+			if(num2 >= 10) num2 = addDigits(num2); 
+	        return num2;
+        }
+   }
+}

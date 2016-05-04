@@ -1,0 +1,100 @@
+public class Solution {
+	
+	public void main(){
+		ListNode l1 = null;
+		ListNode l2 = null;
+		l1.val = 2;  l1.next.val = 4; l1.next.next.val = 3;
+		l2.val = 5;  l2.next.val = 6; l2.next.next.val = 4;
+		addTwoNumbers(l1,l2);
+	}
+	
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode re = null;
+        boolean carry = false;											//进位变量
+        int trueadd; 															//当前位真实和
+        
+        if(l1 == null && l2 != null){
+        	return l2;
+        }
+        
+        if(l1 != null && l2 == null){
+        	return l1;
+        }
+        
+        if(l1 == null && l2 == null){
+        	return re;
+        }
+        
+        if(l1 != null && l2 != null){ 									//判断两个链表是否有空
+        	
+        	while(l1.next != null && l2.next != null){ 		//判断当前是否链表尾
+        			
+        			if(carry){
+        				re.val = (l1.val+l2.val+1)%10; 
+        				trueadd=l1.val+l2.val+1;
+        				carry = false;
+        				}
+        			else {
+        				re.val = (l1.val+l2.val)%10; 
+        				trueadd=l1.val+l2.val;
+        			}
+        			
+        			if(trueadd >= 10){ 										//判断进位
+        				carry = true;
+        	}
+        			
+        			re = re.next;
+        			l1 = l1.next;
+        			l2 = l2.next;
+        }
+        
+        	if(l1.next == null && l2.next == null){return re;} //两链表都结束
+        	
+        	else{
+        		while(l1.next == null && l2.next != null){ 		 //2链继续
+        			
+        			if(carry){
+        				re.val = (l2.val+1)%10; 
+        				trueadd=l2.val+1;
+        				carry = false;
+        				}
+        			else {
+        				re.val = (l2.val)%10; 
+        				trueadd=l2.val;
+        			}
+        			
+        			if(trueadd >= 10){ //判断进位
+        				carry = true;
+        	}
+        			
+                re = re.next;
+                l2 = l2.next;
+                
+                }
+                
+        		while(l2.next == null && l1.next != null){ 			//1链继续
+        			
+        			if(carry){
+        				re.val = (l1.val+1)%10; 
+        				trueadd=l1.val+1;
+        				carry = false;
+        				}
+        			else {
+        				re.val = (l1.val)%10; 
+        				trueadd=l1.val;
+        			}
+        			
+        			if(trueadd >= 10){ //判断进位
+        				carry = true;
+        	}
+        			
+                re = re.next;
+                l1 = l1.next;
+                }
+                return re;
+                
+        	}
+        }
+        return re;
+    }
+}
