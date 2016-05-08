@@ -1,0 +1,25 @@
+
+public class Main {
+	public static void main(String[] args) {
+		int[] a={0,0} ;
+		moveZeroes(a);
+	}
+	
+    public static void moveZeroes(int[] nums) {
+        int fast = 0;
+        int slow = nums.length-1;
+        
+        if(nums != null && fast != slow){
+        while(fast <= slow){
+        	while(nums[fast] != 0 && fast < nums.length-1) fast++;
+    		while(nums[slow]== 0 && slow > 0) slow--;
+    		
+    		if(fast >= slow) break;
+    		
+    		nums[fast] ^= nums[slow];
+    		nums[slow] ^= nums[fast];
+    		nums[fast] ^= nums[slow];
+        	}
+        }
+    }
+}
