@@ -1,0 +1,6 @@
+
+public class Main {
+    public void deleteNode(ListNode node) {
+        node.next = node.next.next;
+    }
+}

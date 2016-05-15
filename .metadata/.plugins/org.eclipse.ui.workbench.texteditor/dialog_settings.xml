@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item value="277" key="DIALOG_WIDTH"/>
+		<item value="251" key="DIALOG_WIDTH"/>
 		<item value="172" key="DIALOG_Y_ORIGIN"/>
+		<item value="400" key="DIALOG_HEIGHT"/>
 		<item value="683" key="DIALOG_X_ORIGIN"/>
-		<item value="436" key="DIALOG_HEIGHT"/>
-		<item value="1|Microsoft YaHei UI|10.5|0|WINDOWS|1|-14|0|0|0|400|0|0|0|-122|3|2|1|34|Microsoft YaHei UI" key="DIALOG_FONT_NAME"/>
+		<item value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="wrap"/>
-		<item value="true" key="casesensitive"/>
 		<item value="false" key="isRegEx"/>
+		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wholeword"/>
 		<item value="Hashtable" key="selection"/>

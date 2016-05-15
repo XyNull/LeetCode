@@ -1,0 +1,28 @@
+
+public class Main {
+
+public ListNode quickSort(ListNode slow , ListNode fast) {  
+    if (slow != null && fast != null) {
+        int x = slow.val; 
+        while (slow != null && fast != null)  {
+            while(fast != null && fast.val >= x) fast = fast.next;
+            if(fast == null) break;
+                slow.val = fast.val;
+            	slow = slow.next;
+              
+            while(slow != null && slow.val < x) slow = slow.next;
+            	if(slow == null) break;
+                fast.val = slow.val;
+                fast = fast.next;
+        }
+        slow.val = x;  
+        quickSort(slow,fast.next); // µÝ¹éµ÷ÓÃ   
+        quickSort(slow.next, fast);  
+        }  
+    return slow;
+}  
+
+public ListNode sortList(ListNode head) {
+
+	}
+}
