@@ -1,6 +1,0 @@
-
-public class Main {
-    public ListNode removeNthFromEnd(ListNode head, int n) {
-        
-    }
-}

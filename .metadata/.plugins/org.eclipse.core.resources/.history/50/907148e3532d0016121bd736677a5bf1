@@ -1,0 +1,26 @@
+import java.util.LinkedList;
+import java.util.List;
+
+public class Main {
+	List<String> list = new LinkedList<String>();
+	List<String> front = new LinkedList<String>();
+	
+	public StringBuilder unit(StringBuilder tmp,int x){
+		StringBuilder tmp = null;
+		tmp.append("->");
+		tmp.append(String.valueOf(x));
+		return tmp;
+	}
+
+	public List<String> binaryTreePaths(TreeNode root) {
+		if (root == null)
+			return null;
+		StringBuilder tmp = null;
+		
+		unit(tmp,root.val);
+		
+		list.add(tmp.toString());
+		return list;
+	}
+
+}
