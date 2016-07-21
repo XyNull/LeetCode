@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="将“test.test.main(...)”中的局部变量“times”重命名为“nums”&#x0D;&#x0A;－ 原始项目：“test”&#x0D;&#x0A;－ 原始元素：“test.test.main(String[]).times”&#x0D;&#x0A;－ 重命名的元素：“times”&#x0D;&#x0A;－ 更新对已重构元素的引用" description="重命名局部变量“times”" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;test{test.java[test~main~\[QString;@times!432!463!436!440!I!0!false" name="nums" references="true" stamp="1468133551578" version="1.0"/>
+</session>
