@@ -1,0 +1,6 @@
+
+public class Main {
+    public ListNode rotateRight(ListNode head, int k) {
+        return null;
+    }
+}

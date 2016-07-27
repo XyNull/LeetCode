@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="将“SolutionB.rotate(...)”中的局部变量“rotate”重命名为“front”&#x0D;&#x0A;－ 原始项目：“189.Rotate-Array”&#x0D;&#x0A;－ 原始元素：“SolutionB.rotate(int[], int).rotate”&#x0D;&#x0A;－ 重命名的元素：“rotate”&#x0D;&#x0A;－ 更新对已重构元素的引用" description="重命名局部变量“rotate”" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;{SolutionB.java[SolutionB~rotate~\[I~I@rotate!254!280!258!263!I!0!false" name="front" references="true" stamp="1469435128281" version="1.0"/>
+</session>
