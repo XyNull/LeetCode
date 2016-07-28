@@ -1,0 +1,62 @@
+import java.util.Hashtable;
+
+public class Main {
+	public RandomListNode copyNode(RandomListNode head){
+		if(head == null) return null;
+		
+		RandomListNode copy = new  RandomListNode(head.label), 
+				output = copy;
+		head = head.next;
+		
+		while(head != null){
+			copy.next = new RandomListNode(head.label);
+			copy = copy.next;
+			head = head.next;
+		}
+		
+		return output;
+	}
+	
+	public RandomListNode copyRandomList(RandomListNode head) {
+    	if(head == null) return null;
+    	
+    	RandomListNode copy = copyNode(head), point = head;
+    	Hashtable ways = new Hashtable();
+    	
+    	//记录下每个节点ramdon的位置并存入hashtable
+    	//key = 该节点到头的距离，value = 该节点ramdon到头的距离
+    	for(int i = 0; point != null; point = point.next){
+    		
+    		//计算距离头的步数
+    		int steps = 0;
+    		RandomListNode step = head;
+    		for(;step != point.random; step = step.next){
+    			steps++;
+    		}
+    		
+    		if(step == null) ways.put(i, null);
+    			else ways.put(i, steps);
+    		
+    		i++;
+    	}
+    	
+    	point = copy;
+    	//根据hashtable取值赋给copy链表相应位置
+    	for(int i = 0; point != null; point = point.next){
+    		int steps = 0;
+    		RandomListNode step = copy;
+    		
+    		if(ways.get(i) == null) point.random = null;
+    		
+    		else {
+    			for(;steps != (int)ways.get(i); steps++){
+    				step = step.next;
+    			}
+    		
+    			point.random = step;
+    		}
+    	}
+    	
+    	return copy;
+    }
+}

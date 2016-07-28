@@ -1,0 +1,19 @@
+
+public class Better {
+	public static RandomListNode doubleNode(RandomListNode head){
+	if(head == null) return null;
+	RandomListNode output = head;
+	
+	while(head != null){
+		RandomListNode tmp = new  RandomListNode(head.label);
+		tmp.next = head.next;
+		head.next = tmp;
+		head = tmp.next;
+	}
+	
+	return output;
+}
+	public RandomListNode copyRandomList(RandomListNode head){
+		
+	}
+}
