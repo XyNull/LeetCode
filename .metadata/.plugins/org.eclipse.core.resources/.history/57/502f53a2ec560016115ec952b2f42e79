@@ -1,0 +1,29 @@
+
+public class Main {
+	/*public static void main(String[] args){
+		ListNode[] lists = null;
+		mergeKLists(lists);
+	}*/
+	
+	public ListNode maxNode(ListNode[] lists){
+		ListNode max = new ListNode(-1);
+		
+		for(ListNode node :lists){
+			if(node.val >= max.val) max = node;
+		}
+		
+		return max;
+	}
+
+    public static ListNode mergeKLists(ListNode[] lists) {
+    	if(lists == null) return null;
+    	
+        int size = lists.length;
+        if(size == 0) return null;
+        
+		ListNode dummy = new ListNode(-1);
+		ListNode point = dummy;
+		
+		
+    }
+}

@@ -1,0 +1,52 @@
+
+public class Main {
+	/*public static void main(String[] args){
+		ListNode[] lists = null;
+		mergeKLists(lists);
+	}*/
+	
+	public int maxNode(ListNode[] lists){
+		ListNode max = lists[0];
+		int result = 0;
+		
+		for(int i = 0; i <= lists.length-1; i++){
+			if(lists[i].val >= max.val) {
+				max = lists[i];
+				result = i;
+			}
+		}
+		
+		return result;
+	}
+
+    public ListNode mergeKLists(ListNode[] lists) {
+    	if(lists == null) return null;
+    	
+        int size = lists.length;
+        if(size == 0) return null;
+        
+		ListNode dummy = new ListNode(-1);
+		ListNode[] none = {};
+		
+		while(lists != none){
+			
+			while(true){
+			//取出最大值，并后移该链表
+			dummy.next = lists[maxNode(lists)];
+			lists[maxNode(lists)] = lists[maxNode(lists)].next;
+			
+			if(lists[maxNode(lists)] == null) break;
+			}
+			
+			ListNode[] newLists = new ListNode[size-1];
+			int i = 0;
+			for(ListNode node: lists){
+				if(node != null) newLists[i] = node;
+			}
+			
+			lists = newLists;
+		}
+		
+		return dummy.next;
+    }
+}

@@ -1,0 +1,82 @@
+
+public class Main {
+	public static void main(String[] args){
+		ListNode a = null;
+		ListNode[] lists = {a};
+		mergeKLists(lists);
+	}
+	
+	public static int maxNode(ListNode[] lists){
+		if(lists.length == 1) return 0;
+		
+		ListNode max = lists[0];
+		int result = 0;
+		
+		for(int i = 0; i <= lists.length-1; i++){
+			if(lists[i].val >= max.val) {
+				max = lists[i];
+				result = i;
+			}
+		}
+		
+		return result;
+	}
+
+    public static ListNode mergeKLists(ListNode[] lists) {
+    	if(lists == null) return null;
+    	
+        int size = lists.length;
+        if(size == 0) return null;
+        
+		ListNode dummy = new ListNode(-1);
+		ListNode[] none = {};
+		
+		//验空
+		{int e = 0;
+			for(ListNode node: lists){
+				if(node == null) e++;
+			}
+			
+			if(e > 0 && lists.length-e > 0){
+				ListNode[] newLists = new ListNode[lists.length-e];
+				int i = 0;
+				for(ListNode node: lists){
+					if(node != null) {
+						newLists[i] = node;
+						i++;
+					}
+				}
+				lists = newLists;
+			}
+			
+			if(lists.length-e == 0){
+				lists = none;
+			}
+		}
+		
+		while(lists.equals(none)){
+			
+			while(true){
+			//取出最大值，并后移该链表
+				dummy.next = lists[maxNode(lists)];
+				lists[maxNode(lists)] = lists[maxNode(lists)].next;
+			
+				if(lists[maxNode(lists)] == null) break;
+			}
+			
+			//如果还有剩下链表，新建链表组并替代原链表
+			if(lists.length-1 == 0) break;
+			ListNode[] newLists = new ListNode[lists.length-1];
+			int i = 0;
+			for(ListNode node: lists){
+				if(node != null) {
+					newLists[i] = node;
+					i++;
+				}
+			}
+			lists = newLists;
+		}
+		
+		return dummy.next;
+    }
+}

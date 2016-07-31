@@ -1,0 +1,6 @@
+
+public class Main {
+    public ListNode mergeKLists(ListNode[] lists) {
+        
+    }
+}

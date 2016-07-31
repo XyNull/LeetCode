@@ -1,6 +1,0 @@
-
-public class Main {
-    public ListNode partition(ListNode head, int x) {
-        
-    }
-}

@@ -5,8 +5,8 @@ public class Main {
         if(l1 == null) return l2;
         if(l2 == null) return l1;
 
-		ListNode headTmp = new ListNode(-1);
-		ListNode point = headTmp;
+		ListNode dummy = new ListNode(-1);
+		ListNode point = dummy;
 		
 		//用point将两段链表排序连接
 		while (l1 != null && l2 != null) {
@@ -16,18 +16,18 @@ public class Main {
 			}
 			else{
 				point.next = l2;
-				l2=l2.next;
+				l2 = l2.next;
 			}
 			point = point.next;
 		}
 		
 		if(l1 == null) {
-			if(l2!=null) point.next = l2;
-			}
+			if(l2 != null) point.next = l2;
+		}
 		if(l2 == null) {
-			if(l1!=null)point.next=l1;
-			}
+			if(l1 != null) point.next=l1;
+		}
 		
-		return headTmp.next;
+		return dummy.next;
     }
 }
