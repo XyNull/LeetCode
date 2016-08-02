@@ -1,0 +1,14 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+    public List<List<Integer>> levelOrderBottom(TreeNode root) {
+    	if(root == null) return null;
+    	
+    	List<List<Integer>> valGroup = new ArrayList<List<Integer>>();
+    	List<Integer> vals = new ArrayList<Integer>();
+    	
+    	vals.add(root.val);
+    	return valGroup.add(vals);
+    }
+}
