@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="将“Main.removeDuplicates(...)”中的局部变量“twice”重命名为“times”&#x0D;&#x0A;－ 原始项目：“80.Remove-Duplicates-from-Sorted-Array-II”&#x0D;&#x0A;－ 原始元素：“Main.removeDuplicates(int[]).twice”&#x0D;&#x0A;－ 重命名的元素：“twice”&#x0D;&#x0A;－ 更新对已重构元素的引用" description="重命名局部变量“twice”" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;{Main.java[Main~removeDuplicates~\[I@twice!221!234!225!229!I!0!false" name="times" references="true" stamp="1470210711615" version="1.0"/>
+</session>

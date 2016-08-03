@@ -1,0 +1,36 @@
+
+public class Main {
+    public int removeDuplicates(int[] nums) {
+        if(nums.length == 0|| nums.length == 1) return nums.length;
+        
+        int i = 0;
+        for(int j = 1; j < nums.length;){
+        	int times = 0;
+        	
+        	
+        	while(nums[j] == nums[i]){
+        		j++;
+        		times++;
+        		if(j > nums.length-1) break;
+        	}
+        		
+        	if(times == 0){
+        		i++;
+        		j++;
+        	}
+        	
+        	if(times == 1){
+        		i = j;
+        		j++;
+        	}
+        	
+        	if(times >= 2){
+        		nums[i+2] = nums[j];
+        		i += 2;
+        		if(j <= i) j = i+1;
+        	}
+        }
+        
+        return i+1;
+    }
+}

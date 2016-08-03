@@ -1,0 +1,9 @@
+
+public class better {
+	public static int removeDuplicates(int[] nums){
+    	int length = nums.length;
+        if(nums.length == 0|| nums.length == 1) return length;
+        
+        
+	}
+}

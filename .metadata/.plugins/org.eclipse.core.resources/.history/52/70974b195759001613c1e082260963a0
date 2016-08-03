@@ -1,0 +1,47 @@
+
+public class Main {
+	public static void main(String[] args){
+		int[] a = {1,2,2,2,3,3,4};
+		removeDuplicates(a);
+	}
+	
+    public static int removeDuplicates(int[] nums) {
+    	int length = nums.length;
+        if(nums.length == 0|| nums.length == 1) return length;
+        
+        int i = 0;
+        for(int j = 1; j < nums.length;){
+        	int times = 0;
+        	while(nums[j] == nums[i] && nums[j] >= nums[i]){
+        		j++;
+        		times++;
+        		if(j > length-1) break;
+        	}
+        		
+        	if(times == 0){
+        		i++;
+        		j++;
+        	}
+        	
+        	if(times == 1){
+        		i = j;
+        		j++;
+        	}
+        	
+        	if(times >= 2){
+        		i += 2;
+        		int tempi = i,tempj = j;
+        		while(tempj < length){
+        			nums[tempi] = nums[tempj] + nums[tempi];
+        			nums[tempj] = nums[tempi] - nums[tempj];
+        			nums[tempi] = nums[tempi] - nums[tempj];
+        			tempi++;
+        			tempj++;
+        		}
+        		j = i+1;
+        	}
+        }
+        
+        return i+1;
+    }
+}
