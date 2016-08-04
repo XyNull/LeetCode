@@ -1,0 +1,21 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+	public static void main(String[] args){
+		getRow(2);
+	}
+	
+    public static List<Integer> getRow(int n) {
+    	List<Integer> cur = new ArrayList();
+    	cur.add(1);
+        if(n == 0) return cur;
+        cur.add(1);
+        
+        for(int i = 1; i < n; i++)
+        	for(int j = n-1; j > 0; j--)
+        		cur.add(j,cur.get(j)+cur.get(j-1));
+        
+        return cur;
+    }
+}
