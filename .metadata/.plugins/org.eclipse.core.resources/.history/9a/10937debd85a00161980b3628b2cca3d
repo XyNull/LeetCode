@@ -1,0 +1,41 @@
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Hashtable;
+
+public class Main {
+
+    public List<Integer> twoSum(int[] nums, int target) {
+        int pointer = 0;
+		List<Integer> temp = new ArrayList();
+        
+        Hashtable<Integer, Integer> Hmap = new Hashtable<Integer, Integer>();
+        
+        while(pointer <= nums.length){
+        	int num = target - nums[pointer];
+        	if(Hmap.get(num) != null){
+        		temp.add(pointer);
+        		temp.add(Hmap.get(num)); 
+        		return temp;
+        	}
+        	else{
+        		Hmap.put(nums[pointer], pointer);
+        	}
+        	pointer++;
+        }
+		return temp;
+    }
+
+    public List<List<Integer>> threeSum(int[] n) {
+    	List<List<Integer>> res = new ArrayList();
+        for(int i:n){
+        	if(i < 0){
+        		List<Integer> array = new ArrayList();
+        		array.add(i);
+        		
+        		res.add(array);
+        	}
+        }
+        
+        return res;
+    }
+}

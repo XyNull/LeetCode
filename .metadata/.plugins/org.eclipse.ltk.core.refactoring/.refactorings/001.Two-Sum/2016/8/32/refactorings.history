@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="将“Solution.twoSum(...)”中的局部变量“Pointer”重命名为“pointer”&#x0D;&#x0A;－ 原始项目：“001.Two-Sum”&#x0D;&#x0A;－ 原始元素：“Solution.twoSum(int[], int).Pointer”&#x0D;&#x0A;－ 重命名的元素：“Pointer”&#x0D;&#x0A;－ 更新对已重构元素的引用" description="重命名局部变量“Pointer”" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;{Solution.java[Solution~twoSum~\[I~I@Pointer!115!130!119!125!I!0!false" name="pointer" references="true" stamp="1470376126793" version="1.0"/>
+</session>

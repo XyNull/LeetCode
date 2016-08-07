@@ -1,0 +1,55 @@
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Main {
+	public static void main(String[] args){
+		int[] a = {-1,0,1,2,-1,-4};
+		threeSum(a);
+	}
+	
+    public static List<List<Integer>> threeSum(int[] n) {
+    	Arrays.sort(n);
+    	List<List<Integer>> res = new ArrayList();
+    	
+loopi:   for(int i = 0; i < n.length; i++){ 	
+        	//以剩余数为边界，新建双指针移动寻找
+        	int x = 0 - n[i];
+        	int p = i,q = i+1;
+        	
+loopp:    	for(; n[p] <= x && p < n.length-2; p++){
+    			//p去重
+    			while(n[p] == n[p+1]){
+    				p++;
+    				if(p > n.length-2) break loopp;
+    			}
+    			q = p+1;
+    			
+loopq:			while(n[q] <= x){
+    				if(n[q]+n[p] == x){
+    					List<Integer> three = new ArrayList();
+    					three.add(n[i]);
+    					three.add(n[q]);
+    					three.add(n[p]);
+    					res.add(three);
+    				}
+    				q++;
+    				if(q > n.length-2) break;
+    				
+					//q去重
+					while(n[q] == n[q+1]){
+						q++;
+						if(q > n.length-1) break loopq;
+					}
+        		}
+        	}
+			//i去重
+			while(n[i] == n[i+1]){
+				i++;
+				if(i > n.length-1) break loopi;
+			}
+        }
+        
+        return res;
+    }
+}
