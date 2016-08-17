@@ -1,0 +1,12 @@
+
+public class Main {
+    public boolean isPalindrome(int x) {
+    	int temp = x;
+        while(x>10){
+        	int i = x%10;
+        	x /= 10;
+        	i *= 10;
+        	i += x%10;
+        }
+    }
+}

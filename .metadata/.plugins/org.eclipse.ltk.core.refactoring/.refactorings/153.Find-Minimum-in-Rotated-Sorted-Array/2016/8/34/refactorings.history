@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="将类型“Main”重命名为“Traversal”&#x0D;&#x0A;－ 原始项目：“153.Find-Minimum-in-Rotated-Sorted-Array”&#x0D;&#x0A;－ 原始元素：“Main”&#x0D;&#x0A;－ 重命名的元素：“Traversal”&#x0D;&#x0A;－ 更新对已重构元素的引用&#x0D;&#x0A;－ 更新注释和字符串中出现的文本" description="重命名类型“Main”" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{Main.java[Main" matchStrategy="1" name="Traversal" qualified="false" references="true" similarDeclarations="false" stamp="1471403006345" textual="false" version="1.0"/>
+</session>

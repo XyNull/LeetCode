@@ -1,0 +1,28 @@
+
+public class Main {
+    public boolean searchMatrix(int[][] m, int t) {
+    	int por = m.length-1;
+    	int lat = m[0].length-1;
+    	if(por == 0 && lat == 0) return m[0][0] == t;
+    	
+    	while(t < m[por][lat] && t < m[0][lat] && t < m[por][0]){
+    		lat--;
+    		por--;
+    		if(por == 0 || lat == 0) break;
+    	}
+    	
+    	if(t >= m[0][lat] && t <= m[por][lat]){
+    		for(int i = 0; i <= por; i++){
+    			if(m[i][lat] == t) return true;
+    		}
+    	}
+    		
+    	if(t >= m[por][0] && t <= m[por][lat]){
+    		for(int i = 0; i <= lat; i++){
+    			if(m[por][i] == t) return true;
+    		}
+    	}
+    		
+    	return false;
+    }
+}
