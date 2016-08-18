@@ -1,0 +1,32 @@
+
+public class Main {
+    public int[] searchRange(int[] n, int t) {
+        int start = 0, end = n.length-1;
+        int[] error = {-1,-1};
+        
+        if(t < n[0] || t > n[end]) return error;
+        
+        while(true){
+        	int mid = (start + end) / 2;
+        	
+        	if(mid == t) {
+        		start = end = mid;
+        		break;
+        	}
+        	
+        	if(start - end <= 1) return error;
+        	
+        	if(mid > t) end = mid;
+        	else start = mid;
+        }
+        
+        while(n[start-1] == t && start != 0) 
+        	start--;
+            
+        while(n[end+1] == t && end != n.length-1) 
+        	end++;
+        
+        int[] res = {start,end};
+        return res;
+    }
+}

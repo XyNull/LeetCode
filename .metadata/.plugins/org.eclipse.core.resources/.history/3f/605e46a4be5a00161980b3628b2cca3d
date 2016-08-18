@@ -1,6 +1,0 @@
-
-public class Main {
-	public void merge(int[] n1, int m, int[] n2, int n){
-		
-	}
-}
