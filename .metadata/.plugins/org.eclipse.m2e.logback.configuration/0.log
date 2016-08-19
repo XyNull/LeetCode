@@ -52,3 +52,5 @@ Caused by: org.eclipse.aether.transfer.ArtifactNotFoundException: Could not find
 2016-08-07 21:10:14,787 [Worker-15] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is out-of-date. Remote download required.
 2016-08-17 11:27:40,357 [Worker-24] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is out-of-date. Remote download required.
 2016-08-18 15:09:05,774 [Worker-18] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is out-of-date. Remote download required.
+2016-08-19 11:22:51,603 [main] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is not out-of-date. No remote download required.
+2016-08-19 16:29:48,347 [main] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is out-of-date. Remote download required.

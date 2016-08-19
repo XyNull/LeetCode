@@ -1,0 +1,16 @@
+
+public class Main {
+    public TreeNode buildTree(int[] in, int[] post) {
+        int rootVal = in[in.length-1];
+        TreeNode root = new TreeNode(rootVal);
+        
+        int[] leftIn,rightIn,newPost;
+        for(int i = 0;i < in.length; i++){
+        	if(in[i] == rootVal) break;
+        	leftIn[i] = in[i];
+        }
+        
+        root.left = buildTree(leftIn,leftPost);
+        root.right = buildTree(rightIn,rightPost);
+    }
+}
