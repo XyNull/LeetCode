@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Main {
 	public List<Integer> Traversal(TreeNode root){
-		List re = new ArrayList();
+		List<Integer> re = new ArrayList<Integer>();
 		
 		if(root==null) return null;
 		if(root.left != null) re.addAll(postorderTraversal(root.left));		
@@ -15,7 +15,7 @@ public class Main {
 	}
 	
     public List<Integer> postorderTraversal(TreeNode root) {
-		List re = new ArrayList();
+		List<Integer> re = new ArrayList<Integer>();
 		if(root==null) return re;
 		re = Traversal(root);
 		return re;

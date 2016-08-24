@@ -1,0 +1,6 @@
+
+public class Iteratively {
+    public List<Integer> preorderTraversal(TreeNode root) {
+        
+    }
+}
