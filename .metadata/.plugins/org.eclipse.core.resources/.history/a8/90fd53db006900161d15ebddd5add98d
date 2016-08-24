@@ -1,0 +1,58 @@
+import java.util.ArrayList;
+
+public class Main {
+	public static void main(String[] args){
+		TreeNode root = new TreeNode(1);
+		root.left = new TreeNode(2);
+		root.right = new TreeNode(3);
+		isSymmetric(root);
+	}
+	public static boolean isSymmetric(TreeNode root) {
+        if(root == null) return true;
+        TreeNode pointer = root;
+        ArrayList<TreeNode> curList = new ArrayList<TreeNode>();
+        curList.add(root);
+        ArrayList<TreeNode> temp = new ArrayList<TreeNode>();
+        
+        while(true){
+        	if(!isPalindrome(curList)) return false;
+        	
+        	int i = 0;
+        	while(i <= curList.size()-1){
+        		pointer = curList.get(i++);
+        		if(pointer.left != null)
+            		temp.add(root.left);
+            	
+            	if(pointer.right != null)
+            		temp.add(root.right);
+        	}
+        	if(temp.size() == 0) break;
+        	curList.removeAll(curList);
+        	
+        	ArrayList<TreeNode> exchange = curList;
+        	curList = temp;
+        	temp = exchange;
+        }
+        return true;
+    }
+    
+    public static boolean isPalindrome(ArrayList<TreeNode> list){
+    	if(list.size() == 0) return true;
+    	int mid = list.size() / 2;
+    	int front;
+    	if(list.size() % 2 == 0){
+    		front = mid+1;
+    	}
+    	else{
+    		front = mid+1;
+    		mid--;
+    	}
+		while(mid >= 0){
+			if(list.get(mid).val != list.get(front).val)
+				return false;
+			mid--;
+			front++;
+		}
+		return true;
+    }
+}
