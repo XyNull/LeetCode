@@ -1,0 +1,38 @@
+
+public class Recursion {
+	public void connect(TreeLinkNode root) {
+    	if(root == null || (root.left == null && root.right == null))
+			return;
+    	TreeLinkNode exist,existN = root.next;
+    	
+    	if(existN != null){
+    		while(existN.left == null && existN.right == null){
+    			existN = existN.next;
+    			if(existN == null) break;
+    		}
+    	}
+    	
+    	if(root.left != null && root.right != null){
+    		root.left.next  = root.right;
+        	if(existN != null){
+        		if(existN.left != null) 
+            		root.right.next = existN.left;
+            	else if(existN.right != null) 
+            		root.right.next = existN.right;
+        	}
+    	}
+    	
+    	else if(root.next != null){
+    		if(root.left != null) exist = root.left;
+    		else exist = root.right;
+    		
+    		if(root.next.left != null) 
+    			exist.next = existN.left;
+    		else if(root.next.right != null) 
+    			exist.next = existN.right;
+    	}
+    	
+    	connect(root.left);
+    	connect(root.right);
+    }
+}

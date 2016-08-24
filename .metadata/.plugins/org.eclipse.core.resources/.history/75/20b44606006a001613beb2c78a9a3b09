@@ -1,0 +1,29 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class TreeNodeHelper {
+	public TreeNode treeBuilder(int[] n){
+    	if(n.length == 0)
+			return null;
+    	TreeNode root = new TreeNode(n[0]);
+    	Queue<TreeNode> q = new LinkedList<TreeNode>();
+    	q.add(root);
+    	int sum = 1;
+    	
+    	while(sum < n.length){
+    		TreeNode currect = q.poll();
+    		if(n[sum] == 0) sum++;
+    		else currect.left = new TreeNode(n[sum++]);
+    		
+    		if(sum > n.length-1) break;
+    		
+    		if(n[sum] == 0) sum++;
+    		else currect.right = new TreeNode(n[sum++]);
+    		
+    		if(currect.left != null) q.add(currect.left);
+    		if(currect.right != null) q.add(currect.right);
+    	}
+    	
+    	return root;
+	}
+}
