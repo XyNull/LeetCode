@@ -25,9 +25,7 @@ public class TreeNodeHelper {
       		//new all the nodes at next level and push them into queue
     		for(int i = 0; i < 2<<(lv-1); i++){
     			if(num > n.length-1) break;
-    			if(n[num] != 0) nextLv.add(new TreeNode(n[num]));
-    			else nextLv.add(null);
-    			num++;
+    			nextLv.add(new TreeNode(n[num++]));
     		}
     		
     		//connect each nodes from this level to new nodes from queue
