@@ -5,5 +5,5 @@ ENABLED_DECORATORS=org.eclipse.m2e.core.mavenVersionDecorator\:false,org.eclipse
 PLUGINS_NOT_ACTIVATED_ON_STARTUP=org.eclipse.m2e.discovery;
 eclipse.preferences.version=1
 org.eclipse.jface.bannerfont=1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI;
-org.eclipse.jface.textfont=1|mononoki|10.5|0|WINDOWS|1|-14|0|0|0|400|0|0|0|0|3|2|1|49|mononoki;
+org.eclipse.jface.textfont=1|mononoki|12.0|0|WINDOWS|1|-16|0|0|0|400|0|0|0|0|3|2|1|49|mononoki;
 org.eclipse.ui.workbench.texteditor.blockSelectionModeFont=1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI;

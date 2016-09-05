@@ -1,6 +1,0 @@
-
-public class Recursion {
-	public void connect(TreeLinkNode root) {
-		
-	}
-}

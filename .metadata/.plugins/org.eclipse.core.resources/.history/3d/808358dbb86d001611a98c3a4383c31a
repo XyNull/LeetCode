@@ -1,0 +1,23 @@
+package nothing;
+
+import java.io.File;
+
+public class TargetHelper {	
+	public static boolean filePicker(String name) {
+		for(String suf : Layout.getTargets()){
+			if (name.toLowerCase().endsWith(suf))
+				return true;
+		}
+		return false;
+	}
+	
+	public static int isTarget(String path){
+		File f = new File(path);
+		String name = f.getName();
+		for(String str:Layout.getTargets()){
+			if(name.contains(str))
+				return 1;
+		}
+		return 0;
+	}
+}

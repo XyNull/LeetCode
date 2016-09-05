@@ -1,0 +1,7 @@
+package nothing;
+
+import java.io.File;
+
+public class TargetHelper {	
+
+}
