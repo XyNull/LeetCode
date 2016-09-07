@@ -5,7 +5,6 @@ public class Main {
 	public void result(TreeNode node,String path,List<String> list){
 		if(node == null)
 			return;
-		
 		else{
 			if(node.left == null && node.right == null){
 			list.add(path);

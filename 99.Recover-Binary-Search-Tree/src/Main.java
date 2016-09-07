@@ -14,38 +14,11 @@ public class Main {
         recoverTree(a);
     }
     public static void recoverTree(TreeNode root) {
-        ArrayList<TreeNode> inorder = helper(root);
-        int err = 0;
-        int[] res = new int[2];
+        ArrayList<TreeNode> inorder = new ArrayList<>();
 
-        for(int i = 1; i < inorder.size(); i++) {
-            if (inorder.get(i - 1).val > inorder.get(i).val) {
-                if(err == 0){
-                    res[err++] = i - 1;
-                    continue;
-                }
-                if(err == 1)
-                    res[err++] = i;
-            }
-        }
-
-        if(err == 1){
-            res[err] = res[0]+1;
-        }
-
-        TreeNode n1 = inorder.get(res[0]);
-        TreeNode n2 = inorder.get(res[1]);
-
-        n1.val += n2.val;
-        n2.val = n1.val - n2.val;
-        n1.val = n1.val - n2.val;
-    }
-
-    public static ArrayList<TreeNode> helper(TreeNode node){
-        ArrayList<TreeNode> res = new ArrayList<>();
-        if(node == null) return res;
         Stack<TreeNode> stack = new Stack<>();
-        TreeNode pointer = node;
+        TreeNode pointer = root,pre = null;
+        TreeNode[] res = new TreeNode[2];
 
         while(!stack.isEmpty() || pointer != null){
             if(pointer != null){
@@ -54,10 +27,18 @@ public class Main {
             }
             else{
                 pointer = stack.pop();
-                res.add(pointer);
-                pointer = pointer.right;
+                inorder.add(pointer);
+                if(pre != null && pointer.val < pre.val){
+                    res[0] = res[0] == null? pre : res[0];
+                    res[1] = pointer;
+                }
+                    pre = pointer;
+                    pointer = pointer.right;
             }
         }
-        return res;
+
+        res[0].val += res[1].val;
+        res[1].val = res[0].val - res[1].val;
+        res[0].val = res[0].val - res[1].val;
     }
 }
