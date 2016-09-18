@@ -9,7 +9,7 @@ public class Main {
         dp[0] = 0;
 
         int min = prices[0];
-        for(int i = 1; i < n;i++){
+        for(int i = 1; i < n; i++){
             if(dp[i-1] == 0){
                 if(prices[i] - min > 0)
                     dp[i] = prices[i] - min;
