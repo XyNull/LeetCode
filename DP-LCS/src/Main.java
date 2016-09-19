@@ -30,7 +30,7 @@ public class Main {
         }
 
         //generate
-        for(int i = 1; i < n; i++){
+        for(int i = 1; i < n; i++) {
             for (int j = 1; j < m; j++){
                 if(a.charAt(i) == b.charAt(j))
                     dp[i][j] = dp[i-1][j-1] + 1;
